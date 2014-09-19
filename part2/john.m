@@ -20,8 +20,9 @@ if length(v) == 1
     out = v;
     return
 else
-    top_half = v(1:length(v)/2);
-    bottom_half =v(length(v)/2 + 1: length(v));
-    out = [1*john(top_half)  - 1* john(bottom_half);3*john(top_half) + 5*john(bottom_half)];
+    
+    top_product = john(v(1:length(v)/2));
+    bottom_product = john(v(length(v)/2 + 1: length(v)));
+    out = [1*top_product  - 1*bottom_product; 3*top_product + 5*bottom_product];
 end
 
