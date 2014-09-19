@@ -12,16 +12,14 @@ function out=john(v)
 
 % <your code goes here>
 % out = ???;
-% [n, one] = size(v);
-% assert(one == 1);
-% assert(floor(log2(n)) == log2(n))
-
 if length(v) == 1
     out = v;
     return
 else
     top_half = v(1:length(v)/2);
     bottom_half =v(length(v)/2 + 1: length(v));
-    out = [1*john(top_half)  - 1* john(bottom_half);3*john(top_half) + 5*john(bottom_half)];
+    out = 1*john(top_half)  + 
+    
+    
 end
 
