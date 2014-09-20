@@ -8,6 +8,14 @@ function out=findmax(v)
 %logarithmic time. Even for inputs of size 1000000, your algorithm should
 %take less than 0.001 seconds.
 
-
 % <your code goes here>
 % out = ???;
+k = round(length(v)/2);
+if length(v) == 1
+    out = v(1);
+elseif v(k)<v(k+1)
+    out = findmax(v(k+1:length(v)));
+else 
+    out = findmax(v(1:k));
+end
+end
