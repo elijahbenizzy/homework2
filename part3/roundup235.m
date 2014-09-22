@@ -8,7 +8,6 @@ if n == 1
     return
 end
 relevant_primes = [2,3,5];
-
 multiples = relevant_primes(find(mod(n,relevant_primes) == 0));
 while(isempty(multiples))
     n = n+1;

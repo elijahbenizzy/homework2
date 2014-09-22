@@ -15,12 +15,11 @@ function out=john(v)
 % [n, one] = size(v);
 % assert(one == 1);
 % assert(floor(log2(n)) == log2(n))
-
+l = length(v)
 if length(v) == 1
     out = v;
     return
 else
-    
     top_product = john(v(1:length(v)/2));
     bottom_product = john(v(length(v)/2 + 1: length(v)));
     out = [1*top_product  - 1*bottom_product; 3*top_product + 5*bottom_product];

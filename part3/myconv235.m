@@ -1,9 +1,12 @@
 function out=myconv235(a,b)
-pad_length = roundup235(length(a) + length(b) - 1);
-new_a = [zeros(1,pad_length-length(a)) a];
-new_b = [zeros(1,pad_length-length(b)) b];
+
+desired_length = length(a) + length(b)-1;
+pad_length = roundup235(desired_length);
+new_a = [a zeros(1,pad_length-length(a))];
+new_b = [b zeros(1,pad_length-length(b))];
 out = (ifft(fft(new_a) .* fft(new_b)));
-out = int32(ifft(fft(new_a) .* fft(new_b)));
+out = int32(round(ifft(fft(new_a) .* fft(new_b))));
+out = out(1:desired_length);
 end
 % This function takes as input row vectors "a" and "b", and returns their
 % convolution in the variable "out". For example, myconv([1 2],[3 4 5])
