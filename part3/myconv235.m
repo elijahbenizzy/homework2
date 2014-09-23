@@ -1,10 +1,10 @@
 function out=myconv235(a,b)
 
-desired_length = length(a) + length(b) + 1;
+desired_length = length(a) + length(b) - 1;
 pad_length = roundup235(desired_length);
 new_a = [a zeros(1,pad_length-length(a))];
 new_b = [b zeros(1,pad_length-length(b))];
-out = int32(round(ifft(fft(new_a) .* fft(new_b))));
+out = round(ifft(fft(new_a) .* fft(new_b)));
 out = out(1:desired_length);
 end
 % This function takes as input row vectors "a" and "b", and returns their

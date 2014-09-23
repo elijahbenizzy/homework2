@@ -5,6 +5,6 @@ function out=myconv(a,b)
 pad_length = length(a) + length(b)-1;
 new_a = [a zeros(1,pad_length-length(a))];
 new_b = [b zeros(1,pad_length-length(b))];
-out = int32((ifft(fft(new_a) .* fft(new_b))));
+out = round(ifft(fft(new_a) .* fft(new_b)));
 out = out(1:pad_length);
 return
