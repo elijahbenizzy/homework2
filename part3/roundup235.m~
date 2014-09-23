@@ -1,0 +1,19 @@
+function out=roundup235(n)
+%         
+% This function rounds up a number n to the next number that is a product
+% % of powers of 2, 3, and 5. For example, roundup235(999997) should return
+% % 1000000.
+for a = 0:ceil(log(n)/log(2))
+    for b = 0:ceil(log(n)/log(3))
+        for c = 0:ceil(log(n)/log(5))
+            if 2^a*3^b*
+            
+        end
+    end
+end
+
+return
+
+
+
+    
