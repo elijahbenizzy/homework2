@@ -13,10 +13,8 @@ for i = length(raw_digits):-1:1
     out(i) = curr_digit;
     carry = (raw_digits(i) - curr_digit)/10;
 end
-first_valid_index = 1;
-while first_valid_index <= length(out)-1 && out(first_valid_index) == 0  
-    first_valid_index = first_valid_index +1;
+out = out(find(out,1,'first'):end);
+if length(out) == 0
+    out = [ 0 ]
 end
-disp(first_valid_index)
-out = out(first_valid_index:end);
 
